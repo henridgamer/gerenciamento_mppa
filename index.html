@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #008080;
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+        }
+        .banner {
+            display: flex; /* Adiciona flexbox ao contêiner da faixa */
+            justify-content: space-between; /* Alinha os itens nas extremidades do contêiner */
+            align-items: center; /* Centraliza os itens verticalmente */
+            background-color: #6ecaa4; /* Cor de fundo da faixa */
+            padding: 10px;;
+            border-radius: 0%;
+        }
+        .adicionar {
+            background-color: rgba(99, 228, 40, 0.822); /* Fundo azul para o botão Adicionar */
+            color: white; /* Texto branco para o botão Adicionar */
+            border: none; /* Remove o traçado */
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+            padding: 10px 20px; /* Ajusta o tamanho do botão */
+           
+        }
+        .banner h2 {
+            color: white; /* Cor do texto do título */
+            display: flex; /* Adiciona flexbox ao título */
+            justify-content: space-between; /* Alinha os itens nas extremidades do título */
+            align-items: center; /* Centraliza os itens verticalmente */
+            width: 100%; /* Faz o título ocupar toda a largura da faixa */
+        }
+        table {
+            width: 100%;
+            border: 2px solid white; /* Adiciona uma borda ao redor da tabela */
+            border-radius: 10px; /* Bordas arredondadas */
+            background-color: white; /* Fundo branco */
+            margin-top: 20px; /* Espaço entre a faixa e a tabela */
+        }
+        th {
+            height: 50px;
+        }
+        th, td {
+            border-bottom: 1px solid #b4b0b0;
+            padding: 15px;
+            text-align: left;
+        }
+        tr:hover {background-color: #ffffff;}
+        .formar-pdf {
+            background-color: #5659f3; /* Cor da faixa verde */
+            color: white; /* Texto branco para o botão Formar PDF */
+            border: none; /* Remove o traçado */
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+            padding: 10px 20px; /* Ajusta o tamanho do botão */
+        }
+        .editar {
+            background-color: rgb(245, 245, 67); /* Fundo amarelo para o botão Editar */
+            color: rgb(0, 0, 0); /* Texto branco para o botão Editar */
+            border: none; /* Remove o traçado */
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+            padding: 10px 20px; /* Ajusta o tamanho do botão */
+            margin-left: 10px; /* Adiciona espaço à esquerda do botão */
+        }
+        .deletar {
+            background-color: rgb(209, 54, 54); /* Fundo vermelho para o botão Deletar */
+            color: rgb(255, 255, 255); /* Texto branco para o botão Editar */
+            border: none; /* Remove o traçado */
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+            padding: 10px 20px; /* Ajusta o tamanho do botão */
+            margin-left: 10px; /* Adiciona espaço à esquerda do botão */
+        }
+        .botoes {
+            display: flex;
+            justify-content: center; /* Alinha os botões ao centro */
+        }
+        .formar-pdf, .editar, .deletar, .adicionar {
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+        }
+        .formar-pdf:hover, .editar:hover, .deletar:hover, .adicionar:hover {
+            /* Adiciona efeito de "levitação" e escurece a sombra quando o mouse passa sobre o botão */
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-7px);
+        }
+        @media (max-width: 768px) {
+    /* Estilos para telas menores que 768px */
+    /* Por exemplo, ajuste o tamanho da fonte ou o espaçamento entre elementos */
+        }
+    </style>
+    <script>
+        const botaoAdicionar = document.getElementById('adicionar');
+botaoAdicionar.addEventListener('click', function() {
+    const email = document.getElementById('Email').value;
+    const novoCadastro = {
+        id: cadastros.length + 1,
+        nome: 'Nome Exemplo',
+        email: email,
+        fone: '(91) 12345-6789',
+        dataNascimento: '06/06/2005',
+         cpf: '123.456.789-10'
+        };
+        cadastros.push(novoCadastro);
+});
+          function adicionar() {
+            alert("Botão Adicionar clicado!");
+            // Adicione sua lógica para adicionar aqui
+        }
+        function editar() {
+            alert("Botão Editar clicado!");
+            // Adicione sua lógica para editar aqui
+        }
+        function deletar() {
+            alert("Botão Deletar clicado!");
+            // Adicione sua lógica para deletar aqui
+            
+        }
+        function formarpdf() {
+            alert("Botão Formar PDF clicado!");
+            // Adicione sua lógica para formar pdf aqui
+            
+        }
+    </script>
+</head>
+<body>
+
+<div class="banner">
+    <h2 class="titulo">Cadastro</h2> <!-- Adiciona a classe 'titulo' ao elemento h2 -->
+    <button class="adicionar">Adicionar</button> <!-- Adiciona o botão Adicionar -->
+</div>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Fone</th>
+    <th>Data de Nascimento</th>
+    <th>CPF</th>
+    <th>Botões</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Henri Ribeiro</td>
+    <td>henriribeiro@gmail.com</td>
+    <td>(91) 12345-6789</td>
+    <td>06/06/2005</td>
+    <td>123.456.789-10</td>
+    <td>
+        <div class="botoes">
+            <button class="formar-pdf">PDF</button> 
+            <button class="editar">Editar</button>
+            <button class="deletar">Deletar</button>
+        </div>
+    </td>
+  </tr>
+  <!-- Adicione mais linhas conforme necessário -->
+</table>
+
+</body>
+</html>
